@@ -1,0 +1,1312 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         21/Apr/2018  22:18:39 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\Texas Instruments   #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\Source\SwqAPP.c                           #
+#    Command line       =  -f "C:\Users\Administrator\Desktop\Texas           #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wCoord.cfg" (-DCPU32MHZ -DROOT=__near_func   #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "C:\Users\Administrator\Desktop\Texas           #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\Administrator\Des #
+#                          ktop\Texas Instruments -                           #
+#                          副本\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          SwqAPP\Source\SwqAPP.c" -D ZTOOL_P1 -D xMT_TASK    #
+#                          -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                 #
+#                          xLCD_SUPPORTED=DEBUG -lC                           #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\CoordinatorEB\List\" -lA         #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\CoordinatorEB\List\"             #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\CoordinatorEB\Obj\" -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Users\Administrator\Desktop\Texas           #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\" -I                 #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\Source\" -I                   #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\ZMain\TI2530DB\" -I     #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\..\..\Components\hal\in #
+#                          clude\" -I "C:\Users\Administrator\Desktop\Texas   #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\target\CC2530EB\" -I                     #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\..\..\Components\mac\in #
+#                          clude\" -I "C:\Users\Administrator\Desktop\Texas   #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\mac\high_level\" -I                          #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\..\..\Components\mac\lo #
+#                          w_level\srf04\" -I "C:\Users\Administrator\Desktop #
+#                          \Texas Instruments - 副本\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\SwqAPP\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\low_level\srf04\single_chip\" -I  #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\..\..\Components\mt\"   #
+#                          -I "C:\Users\Administrator\Desktop\Texas           #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\osal\include\" -I "C:\Users\Administrator\De #
+#                          sktop\Texas Instruments -                          #
+#                          副本\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          SwqAPP\CC2530DB\..\..\..\..\..\Components\services #
+#                          \saddr\" -I "C:\Users\Administrator\Desktop\Texas  #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\" -I                          #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\..\..\Components\stack\ #
+#                          af\" -I "C:\Users\Administrator\Desktop\Texas      #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\nwk\" -I "C:\Users\Administrator\Deskt #
+#                          op\Texas Instruments - 副本\ZStack-CC2530-2.5.1a\P #
+#                          rojects\zstack\Samples\SwqAPP\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sapi\" -I                     #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\..\..\Components\stack\ #
+#                          sec\" -I "C:\Users\Administrator\Desktop\Texas     #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\" -I "C:\Users\Administrator\Deskt #
+#                          op\Texas Instruments - 副本\ZStack-CC2530-2.5.1a\P #
+#                          rojects\zstack\Samples\SwqAPP\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\zdo\" -I                      #
+#                          "C:\Users\Administrator\Desktop\Texas Instruments  #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\..\..\..\..\..\Components\zmac\" #
+#                           -I "C:\Users\Administrator\Desktop\Texas          #
+#                          Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\SwqAPP\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\zmac\f8w\" -Ohz --require_prototypes         #
+#    List file          =  C:\Users\Administrator\Desktop\Texas Instruments   #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\CoordinatorEB\List\SwqAPP.lst    #
+#    Object file        =  C:\Users\Administrator\Desktop\Texas Instruments   #
+#                          - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Sample #
+#                          s\SwqAPP\CC2530DB\CoordinatorEB\Obj\SwqAPP.r51     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\Texas Instruments - 副本\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\SwqAPP\Source\SwqAPP.c
+      1          /******************************************************************************
+      2            Filename:       SwqAPP.c
+      3            Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4            Revision:       $Revision: 29656 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License"). You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 5 seconds.  The application will also
+     46            receives "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          #include "MT_UART.h"
+     69          #include "SwqAPP.h"
+     70          #include "DebugTrace.h"
+     71          
+     72          #if !defined( WIN32 )
+     73            #include "OnBoard.h"
+     74          #endif
+     75          
+     76          /* HAL */
+     77          #include "hal_lcd.h"
+     78          #include "hal_led.h"
+     79          #include "hal_key.h"
+     80          #include "hal_uart.h"
+     81          
+     82          /* RTOS */
+     83          #if defined( IAR_ARMCM3_LM )
+     84          #include "RTOS_App.h"
+     85          #endif  
+     86          
+     87          /*********************************************************************
+     88           * MACROS
+     89           */
+     90          
+     91          /*********************************************************************
+     92           * CONSTANTS
+     93           */
+     94          
+     95          /*********************************************************************
+     96           * TYPEDEFS
+     97           */
+     98          
+     99          /*********************************************************************
+    100           * GLOBAL VARIABLES
+    101           */
+    102          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    103          const cId_t SwqAPP_ClusterList[GENERICAPP_MAX_CLUSTERS] =
+   \                     SwqAPP_ClusterList:
+   \   000000   0100         DW 1
+    104          {
+    105            GENERICAPP_CLUSTERID
+    106          };
+    107          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    108          const SimpleDescriptionFormat_t SwqAPP_SimpleDesc =
+   \                     SwqAPP_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+   \   000007   ....         DW SwqAPP_ClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW SwqAPP_ClusterList
+    109          {
+    110            GENERICAPP_ENDPOINT,              //  int Endpoint;
+    111            GENERICAPP_PROFID,                //  uint16 AppProfId[2];
+    112            GENERICAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+    113            GENERICAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+    114            GENERICAPP_FLAGS,                 //  int   AppFlags:4;
+    115            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    116            (cId_t *)SwqAPP_ClusterList,  //  byte *pAppInClusterList;
+    117            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    118            (cId_t *)SwqAPP_ClusterList   //  byte *pAppInClusterList;
+    119          };
+    120          
+    121          // This is the Endpoint/Interface description.  It is defined here, but
+    122          // filled-in in SwqAPP_Init().  Another way to go would be to fill
+    123          // in the structure here and make it a "const" (in code space).  The
+    124          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    125          endPointDesc_t SwqAPP_epDesc;
+   \                     SwqAPP_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+    126          
+    127          /*********************************************************************
+    128           * EXTERNAL VARIABLES
+    129           */
+    130          
+    131          /*********************************************************************
+    132           * EXTERNAL FUNCTIONS
+    133           */
+    134          
+    135          /*********************************************************************
+    136           * LOCAL VARIABLES
+    137           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    138          byte SwqAPP_TaskID;   // Task ID for internal task/event processing
+   \                     SwqAPP_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    139                                    // This variable will be received when
+    140                                    // SwqAPP_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    141          devStates_t SwqAPP_NwkState;
+   \                     SwqAPP_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    142          
+    143          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    144          byte SwqAPP_TransID;  // This is the unique message ID (counter)
+   \                     SwqAPP_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    145          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    146          afAddrType_t SwqAPP_DstAddr;
+   \                     SwqAPP_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    147          
+    148          /*********************************************************************
+    149           * LOCAL FUNCTIONS
+    150           */
+    151          static void SwqAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    152          static void SwqAPP_HandleKeys( byte shift, byte keys );
+    153          static void SwqAPP_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    154          static void SwqAPP_SendTheMessage( void );
+    155          
+    156          #if defined( IAR_ARMCM3_LM )
+    157          static void SwqAPP_ProcessRtosMessage( void );
+    158          #endif
+    159          
+    160          /*********************************************************************
+    161           * NETWORK LAYER CALLBACKS
+    162           */
+    163          
+    164          /*********************************************************************
+    165           * PUBLIC FUNCTIONS
+    166           */
+    167          
+    168          /*********************************************************************
+    169           * @fn      SwqAPP_Init
+    170           *
+    171           * @brief   Initialization function for the Generic App Task.
+    172           *          This is called during initialization and should contain
+    173           *          any application specific initialization (ie. hardware
+    174           *          initialization/setup, table initialization, power up
+    175           *          notificaiton ... ).
+    176           *
+    177           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    178           *                    used to send messages and set timers.
+    179           *
+    180           * @return  none
+    181           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    182          void SwqAPP_Init( uint8 task_id )
+   \                     SwqAPP_Init:
+    183          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    184            SwqAPP_TaskID = task_id;
+   \   000007   90....       MOV     DPTR,#SwqAPP_TaskID
+   \   00000A   F0           MOVX    @DPTR,A
+    185            SwqAPP_NwkState = DEV_INIT;
+   \   00000B   90....       MOV     DPTR,#SwqAPP_NwkState
+   \   00000E   7401         MOV     A,#0x1
+   \   000010   F0           MOVX    @DPTR,A
+    186            SwqAPP_TransID = 0;
+   \   000011   90....       MOV     DPTR,#SwqAPP_TransID
+   \   000014   E4           CLR     A
+   \   000015   F0           MOVX    @DPTR,A
+    187            MT_UartInit ();
+   \   000016                ; Setup parameters for call to function MT_UartInit
+   \   000016   12....       LCALL   ??MT_UartInit?relay
+    188            MT_UartRegisterTaskID(task_id );
+   \   000019                ; Setup parameters for call to function MT_UartRegisterTaskID
+   \   000019   EE           MOV     A,R6
+   \   00001A   F9           MOV     R1,A
+   \   00001B   12....       LCALL   ??MT_UartRegisterTaskID?relay
+    189            HalUARTWrite (0,"a",1);
+   \   00001E                ; Setup parameters for call to function HalUARTWrite
+   \   00001E   7C01         MOV     R4,#0x1
+   \   000020   7D00         MOV     R5,#0x0
+   \   000022   7A..         MOV     R2,#`?<Constant "a">` & 0xff
+   \   000024   7B..         MOV     R3,#(`?<Constant "a">` >> 8) & 0xff
+   \   000026   7900         MOV     R1,#0x0
+   \   000028   12....       LCALL   ??HalUARTWrite?relay
+    190          //  if((const char *)U0DBUF=="a")
+    191          //  {
+    192          //   HalLedSet( 0x01, 0x01 );
+    193          //  }
+    194           
+    195            
+    196          
+    197            // Device hardware initialization can be added here or in main() (Zmain.c).
+    198            // If the hardware is application specific - add it here.
+    199            // If the hardware is other parts of the device add it in main().
+    200          
+    201            SwqAPP_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   00002B   90....       MOV     DPTR,#SwqAPP_DstAddr + 8
+   \   00002E   E4           CLR     A
+   \   00002F   F0           MOVX    @DPTR,A
+    202            SwqAPP_DstAddr.endPoint = 0;
+   \   000030   A3           INC     DPTR
+   \   000031   F0           MOVX    @DPTR,A
+    203            SwqAPP_DstAddr.addr.shortAddr = 0;
+   \   000032   90....       MOV     DPTR,#SwqAPP_DstAddr
+   \   000035   F0           MOVX    @DPTR,A
+   \   000036   A3           INC     DPTR
+   \   000037   F0           MOVX    @DPTR,A
+    204          
+    205            // Fill out the endpoint description.
+    206            SwqAPP_epDesc.endPoint = GENERICAPP_ENDPOINT;
+   \   000038   90....       MOV     DPTR,#SwqAPP_epDesc
+   \   00003B   740A         MOV     A,#0xa
+   \   00003D   F0           MOVX    @DPTR,A
+    207            SwqAPP_epDesc.task_id = &SwqAPP_TaskID;
+   \   00003E   A3           INC     DPTR
+   \   00003F   74..         MOV     A,#SwqAPP_TaskID & 0xff
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   74..         MOV     A,#(SwqAPP_TaskID >> 8) & 0xff
+   \   000045   F0           MOVX    @DPTR,A
+    208            SwqAPP_epDesc.simpleDesc
+    209                      = (SimpleDescriptionFormat_t *)&SwqAPP_SimpleDesc;
+   \   000046   A3           INC     DPTR
+   \   000047   74..         MOV     A,#SwqAPP_SimpleDesc & 0xff
+   \   000049   F0           MOVX    @DPTR,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   74..         MOV     A,#(SwqAPP_SimpleDesc >> 8) & 0xff
+   \   00004D   F0           MOVX    @DPTR,A
+    210            SwqAPP_epDesc.latencyReq = noLatencyReqs;
+   \   00004E   A3           INC     DPTR
+   \   00004F   E4           CLR     A
+   \   000050   F0           MOVX    @DPTR,A
+    211          
+    212            // Register the endpoint description with the AF
+    213            afRegister( &SwqAPP_epDesc );
+   \   000051                ; Setup parameters for call to function afRegister
+   \   000051   7A..         MOV     R2,#SwqAPP_epDesc & 0xff
+   \   000053   7B..         MOV     R3,#(SwqAPP_epDesc >> 8) & 0xff
+   \   000055   12....       LCALL   ??afRegister?relay
+    214          
+    215            // Register for all key events - This app will handle all key events
+    216            RegisterForKeys( SwqAPP_TaskID );
+   \   000058                ; Setup parameters for call to function RegisterForKeys
+   \   000058   90....       MOV     DPTR,#SwqAPP_TaskID
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F9           MOV     R1,A
+   \   00005D   12....       LCALL   ??RegisterForKeys?relay
+    217          
+    218            // Update the display
+    219          #if defined ( LCD_SUPPORTED )
+    220            HalLcdWriteString( "SwqAPP", HAL_LCD_LINE_1 );
+    221          #endif
+    222          
+    223            ZDO_RegisterForZDOMsg( SwqAPP_TaskID, End_Device_Bind_rsp );
+   \   000060                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000060   7A20         MOV     R2,#0x20
+   \   000062   7B80         MOV     R3,#-0x80
+   \   000064   90....       MOV     DPTR,#SwqAPP_TaskID
+   \   000067   E0           MOVX    A,@DPTR
+   \   000068   F9           MOV     R1,A
+   \   000069   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    224            ZDO_RegisterForZDOMsg( SwqAPP_TaskID, Match_Desc_rsp );
+   \   00006C                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   00006C   7A06         MOV     R2,#0x6
+   \   00006E   7B80         MOV     R3,#-0x80
+   \   000070   90....       MOV     DPTR,#SwqAPP_TaskID
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    225          
+    226          #if defined( IAR_ARMCM3_LM )
+    227            // Register this task with RTOS task initiator
+    228            RTOS_RegisterApp( task_id, GENERICAPP_RTOS_MSG_EVT );
+    229          #endif
+    230          }
+   \   000078   7F01         MOV     R7,#0x1
+   \   00007A   02....       LJMP    ?BANKED_LEAVE_XDATA
+    231          
+    232          /*********************************************************************
+    233           * @fn      SwqAPP_ProcessEvent
+    234           *
+    235           * @brief   Generic Application Task event processor.  This function
+    236           *          is called to process all events for the task.  Events
+    237           *          include timers, messages and any other user defined events.
+    238           *
+    239           * @param   task_id  - The OSAL assigned task ID.
+    240           * @param   events - events to process.  This is a bit map and can
+    241           *                   contain more than one event.
+    242           *
+    243           * @return  none
+    244           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    245          uint16 SwqAPP_ProcessEvent( uint8 task_id, uint16 events )
+   \                     SwqAPP_ProcessEvent:
+    246          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 21
+   \   000005   74EB         MOV     A,#-0x15
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    247            afIncomingMSGPacket_t *MSGpkt;
+    248            afDataConfirm_t *afDataConfirm;
+    249          
+    250            // Data Confirmation message fields
+    251            byte sentEP;
+    252            ZStatus_t sentStatus;
+    253            byte sentTransID;       // This should match the value sent
+    254            (void)task_id;  // Intentionally unreferenced parameter
+    255          
+    256            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL     A,#0x80
+   \   000010   7003         JNZ     $+5
+   \   000012   02....       LJMP    ??SwqAPP_ProcessEvent_0 & 0xFFFF
+    257            {
+    258              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( SwqAPP_TaskID );
+   \   000015                ; Setup parameters for call to function osal_msg_receive
+   \   000015   802B         SJMP    ??SwqAPP_ProcessEvent_1
+    259              while ( MSGpkt )
+    260              {
+    261                switch ( MSGpkt->hdr.event )
+    262                {
+    263                  case ZDO_CB_MSG:
+    264                    SwqAPP_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    265                    break;
+    266          
+    267                  case KEY_CHANGE:
+    268                    SwqAPP_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    269                    break;
+    270          
+    271                  case AF_DATA_CONFIRM_CMD:
+    272                    // This message is received as a confirmation of a data packet sent.
+    273                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    274                    // The message fields are defined in AF.h
+    275                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    276                    sentEP = afDataConfirm->endpoint;
+    277                    sentStatus = afDataConfirm->hdr.status;
+    278                    sentTransID = afDataConfirm->transID;
+    279                    (void)sentEP;
+    280                    (void)sentTransID;
+    281          
+    282                    // Action taken when confirmation is received.
+    283                    if ( sentStatus != ZSuccess )
+    284                    {
+    285                      // The data wasn't delivered -- Do something
+    286                    }
+    287                    break;
+    288          
+    289                  case AF_INCOMING_MSG_CMD:
+    290                    SwqAPP_MessageMSGCB( MSGpkt );
+    291                    break;
+    292          
+    293                  case ZDO_STATE_CHANGE:
+    294                    SwqAPP_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??SwqAPP_ProcessEvent_2:
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   90....       MOV     DPTR,#SwqAPP_NwkState
+   \   00001C   F0           MOVX    @DPTR,A
+    295                    if ( (SwqAPP_NwkState == DEV_ZB_COORD)
+    296                        || (SwqAPP_NwkState == DEV_ROUTER)
+    297                        || (SwqAPP_NwkState == DEV_END_DEVICE) )
+   \   00001D   6409         XRL     A,#0x9
+   \   00001F   600A         JZ      ??SwqAPP_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6407         XRL     A,#0x7
+   \   000024   6005         JZ      ??SwqAPP_ProcessEvent_3
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   6406         XRL     A,#0x6
+   \   000029   7010         JNZ     ??SwqAPP_ProcessEvent_4
+    298                    {
+    299                      // Start sending "the" message in a regular interval.
+    300                      osal_start_timerEx( SwqAPP_TaskID,
+    301                                          GENERICAPP_SEND_MSG_EVT,
+    302                                          GENERICAPP_SEND_MSG_TIMEOUT );
+   \                     ??SwqAPP_ProcessEvent_3:
+   \   00002B                ; Setup parameters for call to function osal_start_timerEx
+   \   00002B   7C88         MOV     R4,#-0x78
+   \   00002D   7D13         MOV     R5,#0x13
+   \   00002F   7A01         MOV     R2,#0x1
+   \   000031   7B00         MOV     R3,#0x0
+   \   000033   90....       MOV     DPTR,#SwqAPP_TaskID
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   F9           MOV     R1,A
+   \   000038   12....       LCALL   ??osal_start_timerEx?relay
+    303                    }
+    304                    break;
+    305          
+    306                  default:
+    307                    break;
+    308                }
+    309          
+    310                // Release the memory
+    311                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??SwqAPP_ProcessEvent_4:
+   \   00003B                ; Setup parameters for call to function osal_msg_deallocate
+   \   00003B   AA..         MOV     R2,?V0 + 0
+   \   00003D   AB..         MOV     R3,?V0 + 1
+   \   00003F   12....       LCALL   ??osal_msg_deallocate?relay
+    312          
+    313                // Next
+    314                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( SwqAPP_TaskID );
+   \   000042                ; Setup parameters for call to function osal_msg_receive
+   \                     ??SwqAPP_ProcessEvent_1:
+   \   000042   90....       MOV     DPTR,#SwqAPP_TaskID
+   \   000045   E0           MOVX    A,@DPTR
+   \   000046   F9           MOV     R1,A
+   \   000047   12....       LCALL   ??osal_msg_receive?relay
+   \   00004A   8A..         MOV     ?V0 + 0,R2
+   \   00004C   8B..         MOV     ?V0 + 1,R3
+   \   00004E   E5..         MOV     A,?V0 + 0
+   \   000050   45..         ORL     A,?V0 + 1
+   \   000052   7003         JNZ     $+5
+   \   000054   02....       LJMP    ??SwqAPP_ProcessEvent_5 & 0xFFFF
+   \   000057   85..82       MOV     DPL,?V0 + 0
+   \   00005A   85..83       MOV     DPH,?V0 + 1
+   \   00005D   E0           MOVX    A,@DPTR
+   \   00005E   2440         ADD     A,#0x40
+   \   000060   7003         JNZ     $+5
+   \   000062   02....       LJMP    ??SwqAPP_ProcessEvent_6 & 0xFFFF
+   \   000065   24EF         ADD     A,#-0x11
+   \   000067   60AE         JZ      ??SwqAPP_ProcessEvent_2
+   \   000069   24FE         ADD     A,#-0x2
+   \   00006B   70CE         JNZ     ??SwqAPP_ProcessEvent_4
+   \   00006D   E5..         MOV     A,?V0 + 0
+   \   00006F   240C         ADD     A,#0xc
+   \   000071   F582         MOV     DPL,A
+   \   000073   E5..         MOV     A,?V0 + 1
+   \   000075   3400         ADDC    A,#0x0
+   \   000077   F583         MOV     DPH,A
+   \   000079   E0           MOVX    A,@DPTR
+   \   00007A   F5..         MOV     ?V0 + 2,A
+   \   00007C   A3           INC     DPTR
+   \   00007D   E0           MOVX    A,@DPTR
+   \   00007E   F5..         MOV     ?V0 + 3,A
+   \   000080   78..         MOV     R0,#?V0 + 2
+   \   000082   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for SwqAPP_ProcessEvent>_0`:
+   \   000085   0000         DW        0
+   \   000087   0200         DW        2
+   \   000089   0680         DW        32774
+   \   00008B   ....         DW        ??SwqAPP_ProcessEvent_7
+   \   00008D   2080         DW        32800
+   \   00008F   ....         DW        ??SwqAPP_ProcessEvent_8
+   \   000091   ....         DW        ??SwqAPP_ProcessEvent_4
+   \                     ??SwqAPP_ProcessEvent_7:
+   \   000093                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   000093   AA..         MOV     R2,?V0 + 0
+   \   000095   AB..         MOV     R3,?V0 + 1
+   \   000097   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   00009A   8A..         MOV     ?V0 + 2,R2
+   \   00009C   8B..         MOV     ?V0 + 3,R3
+   \   00009E   EA           MOV     A,R2
+   \   00009F   45..         ORL     A,?V0 + 3
+   \   0000A1   6098         JZ      ??SwqAPP_ProcessEvent_4
+   \   0000A3   8A82         MOV     DPL,R2
+   \   0000A5   8B83         MOV     DPH,R3
+   \   0000A7   E0           MOVX    A,@DPTR
+   \   0000A8   7032         JNZ     ??SwqAPP_ProcessEvent_9
+   \   0000AA   A3           INC     DPTR
+   \   0000AB   A3           INC     DPTR
+   \   0000AC   A3           INC     DPTR
+   \   0000AD   E0           MOVX    A,@DPTR
+   \   0000AE   602C         JZ      ??SwqAPP_ProcessEvent_9
+   \   0000B0   90....       MOV     DPTR,#SwqAPP_DstAddr + 8
+   \   0000B3   7402         MOV     A,#0x2
+   \   0000B5   F0           MOVX    @DPTR,A
+   \   0000B6   8A82         MOV     DPL,R2
+   \   0000B8   8B83         MOV     DPH,R3
+   \   0000BA   A3           INC     DPTR
+   \   0000BB   E0           MOVX    A,@DPTR
+   \   0000BC   F8           MOV     R0,A
+   \   0000BD   A3           INC     DPTR
+   \   0000BE   E0           MOVX    A,@DPTR
+   \   0000BF   F9           MOV     R1,A
+   \   0000C0   90....       MOV     DPTR,#SwqAPP_DstAddr
+   \   0000C3   E8           MOV     A,R0
+   \   0000C4   F0           MOVX    @DPTR,A
+   \   0000C5   A3           INC     DPTR
+   \   0000C6   E9           MOV     A,R1
+   \   0000C7   F0           MOVX    @DPTR,A
+   \   0000C8   8A82         MOV     DPL,R2
+   \   0000CA   8B83         MOV     DPH,R3
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   A3           INC     DPTR
+   \   0000CF   A3           INC     DPTR
+   \   0000D0   E0           MOVX    A,@DPTR
+   \   0000D1   90....       MOV     DPTR,#SwqAPP_DstAddr + 9
+   \   0000D4   F0           MOVX    @DPTR,A
+   \   0000D5                ; Setup parameters for call to function HalLedSet
+   \   0000D5   7A01         MOV     R2,#0x1
+   \   0000D7   7908         MOV     R1,#0x8
+   \   0000D9   12....       LCALL   ??HalLedSet?relay
+   \                     ??SwqAPP_ProcessEvent_9:
+   \   0000DC                ; Setup parameters for call to function osal_mem_free
+   \   0000DC   AA..         MOV     R2,?V0 + 2
+   \   0000DE   AB..         MOV     R3,?V0 + 3
+   \   0000E0   12....       LCALL   ??osal_mem_free?relay
+   \   0000E3   02....       LJMP    ??SwqAPP_ProcessEvent_4 & 0xFFFF
+   \                     ??SwqAPP_ProcessEvent_8:
+   \   0000E6   E5..         MOV     A,?V0 + 0
+   \   0000E8   2413         ADD     A,#0x13
+   \   0000EA   F582         MOV     DPL,A
+   \   0000EC   E5..         MOV     A,?V0 + 1
+   \   0000EE   3400         ADDC    A,#0x0
+   \   0000F0   F583         MOV     DPH,A
+   \   0000F2   E0           MOVX    A,@DPTR
+   \   0000F3   F8           MOV     R0,A
+   \   0000F4   A3           INC     DPTR
+   \   0000F5   E0           MOVX    A,@DPTR
+   \   0000F6   F583         MOV     DPH,A
+   \   0000F8   8882         MOV     DPL,R0
+   \   0000FA   E0           MOVX    A,@DPTR
+   \   0000FB   700A         JNZ     ??SwqAPP_ProcessEvent_10
+   \   0000FD                ; Setup parameters for call to function HalLedSet
+   \   0000FD   7A01         MOV     R2,#0x1
+   \                     ??SwqAPP_ProcessEvent_11:
+   \   0000FF   7908         MOV     R1,#0x8
+   \   000101   12....       LCALL   ??HalLedSet?relay
+   \   000104   02....       LJMP    ??SwqAPP_ProcessEvent_4 & 0xFFFF
+   \                     ??SwqAPP_ProcessEvent_10:
+   \   000107                ; Setup parameters for call to function HalLedSet
+   \   000107   7A04         MOV     R2,#0x4
+   \   000109   80F4         SJMP    ??SwqAPP_ProcessEvent_11
+   \                     ??SwqAPP_ProcessEvent_6:
+   \   00010B   A3           INC     DPTR
+   \   00010C   A3           INC     DPTR
+   \   00010D   A3           INC     DPTR
+   \   00010E   E0           MOVX    A,@DPTR
+   \   00010F   F5..         MOV     ?V0 + 4,A
+   \   000111   85..82       MOV     DPL,?V0 + 0
+   \   000114   85..83       MOV     DPH,?V0 + 1
+   \   000117   A3           INC     DPTR
+   \   000118   A3           INC     DPTR
+   \   000119   E0           MOVX    A,@DPTR
+   \   00011A   6003         JZ      $+5
+   \   00011C   02....       LJMP    ??SwqAPP_ProcessEvent_4 & 0xFFFF
+   \   00011F   E5..         MOV     A,?V0 + 4
+   \   000121   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000123   506D         JNC     ??SwqAPP_ProcessEvent_12
+   \   000125                ; Setup parameters for call to function HalLedSet
+   \   000125   7A00         MOV     R2,#0x0
+   \   000127   7908         MOV     R1,#0x8
+   \   000129   12....       LCALL   ??HalLedSet?relay
+   \   00012C   7408         MOV     A,#0x8
+   \   00012E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000131   7402         MOV     A,#0x2
+   \   000133   F0           MOVX    @DPTR,A
+   \   000134   85..82       MOV     DPL,?XSP + 0
+   \   000137   85..83       MOV     DPH,?XSP + 1
+   \   00013A   E4           CLR     A
+   \   00013B   F0           MOVX    @DPTR,A
+   \   00013C   A3           INC     DPTR
+   \   00013D   F0           MOVX    @DPTR,A
+   \   00013E                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00013E   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000141   8A..         MOV     ?V0 + 2,R2
+   \   000143   8B..         MOV     ?V0 + 3,R3
+   \   000145   AC..         MOV     R4,?V0 + 2
+   \   000147   AD..         MOV     R5,?V0 + 3
+   \   000149   75....       MOV     ?V0 + 2,#SwqAPP_ClusterList & 0xff
+   \   00014C   75....       MOV     ?V0 + 3,#(SwqAPP_ClusterList >> 8) & 0xff
+   \   00014F                ; Setup parameters for call to function ZDP_EndDeviceBindReq
+   \   00014F   75..00       MOV     ?V0 + 5,#0x0
+   \   000152   78..         MOV     R0,#?V0 + 5
+   \   000154   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000157   78..         MOV     R0,#?V0 + 2
+   \   000159   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00015C   75..01       MOV     ?V0 + 5,#0x1
+   \   00015F   78..         MOV     R0,#?V0 + 5
+   \   000161   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000164   78..         MOV     R0,#?V0 + 2
+   \   000166   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000169   75..01       MOV     ?V0 + 2,#0x1
+   \   00016C   78..         MOV     R0,#?V0 + 2
+   \   00016E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000171   75..04       MOV     ?V0 + 2,#0x4
+   \   000174   75..0F       MOV     ?V0 + 3,#0xf
+   \   000177   78..         MOV     R0,#?V0 + 2
+   \   000179   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00017C   90....       MOV     DPTR,#SwqAPP_epDesc
+   \   00017F   E0           MOVX    A,@DPTR
+   \   000180   F9           MOV     R1,A
+   \   000181   7409         MOV     A,#0x9
+   \   000183   12....       LCALL   ?XSTACK_DISP0_8
+   \   000186   AA82         MOV     R2,DPL
+   \   000188   AB83         MOV     R3,DPH
+   \   00018A   12....       LCALL   ??ZDP_EndDeviceBindReq?relay
+   \   00018D   7409         MOV     A,#0x9
+   \   00018F   12....       LCALL   ?DEALLOC_XSTACK8
+   \                     ??SwqAPP_ProcessEvent_12:
+   \   000192   E5..         MOV     A,?V0 + 4
+   \   000194   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000196   4003         JC      $+5
+   \   000198   02....       LJMP    ??SwqAPP_ProcessEvent_4 & 0xFFFF
+   \   00019B                ; Setup parameters for call to function HalLedSet
+   \   00019B   7A00         MOV     R2,#0x0
+   \   00019D   7908         MOV     R1,#0x8
+   \   00019F   12....       LCALL   ??HalLedSet?relay
+   \   0001A2   7408         MOV     A,#0x8
+   \   0001A4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A7   740F         MOV     A,#0xf
+   \   0001A9   F0           MOVX    @DPTR,A
+   \   0001AA   85..82       MOV     DPL,?XSP + 0
+   \   0001AD   85..83       MOV     DPH,?XSP + 1
+   \   0001B0   74FF         MOV     A,#-0x1
+   \   0001B2   F0           MOVX    @DPTR,A
+   \   0001B3   A3           INC     DPTR
+   \   0001B4   F0           MOVX    @DPTR,A
+   \   0001B5   75....       MOV     ?V0 + 2,#SwqAPP_ClusterList & 0xff
+   \   0001B8   75....       MOV     ?V0 + 3,#(SwqAPP_ClusterList >> 8) & 0xff
+   \   0001BB                ; Setup parameters for call to function ZDP_MatchDescReq
+   \   0001BB   75..00       MOV     ?V0 + 4,#0x0
+   \   0001BE   78..         MOV     R0,#?V0 + 4
+   \   0001C0   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001C3   78..         MOV     R0,#?V0 + 2
+   \   0001C5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001C8   75..01       MOV     ?V0 + 4,#0x1
+   \   0001CB   78..         MOV     R0,#?V0 + 4
+   \   0001CD   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001D0   78..         MOV     R0,#?V0 + 2
+   \   0001D2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001D5   75..04       MOV     ?V0 + 2,#0x4
+   \   0001D8   75..0F       MOV     ?V0 + 3,#0xf
+   \   0001DB   78..         MOV     R0,#?V0 + 2
+   \   0001DD   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001E0   7901         MOV     R1,#0x1
+   \   0001E2   7CFF         MOV     R4,#-0x1
+   \   0001E4   7DFF         MOV     R5,#-0x1
+   \   0001E6   7408         MOV     A,#0x8
+   \   0001E8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001EB   AA82         MOV     R2,DPL
+   \   0001ED   AB83         MOV     R3,DPH
+   \   0001EF   12....       LCALL   ??ZDP_MatchDescReq?relay
+   \   0001F2   7408         MOV     A,#0x8
+   \   0001F4   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001F7   02....       LJMP    ??SwqAPP_ProcessEvent_4 & 0xFFFF
+    315              }
+    316          
+    317              // return unprocessed events
+    318              return (events ^ SYS_EVENT_MSG);
+   \                     ??SwqAPP_ProcessEvent_5:
+   \   0001FA   EE           MOV     A,R6
+   \   0001FB   FA           MOV     R2,A
+   \   0001FC   EF           MOV     A,R7
+   \   0001FD   6480         XRL     A,#0x80
+   \                     ??SwqAPP_ProcessEvent_13:
+   \   0001FF   FB           MOV     R3,A
+   \   000200   02....       LJMP    ??SwqAPP_ProcessEvent_14 & 0xFFFF
+    319            }
+    320          
+    321            // Send a message out - This event is generated by a timer
+    322            //  (setup in SwqAPP_Init()).
+    323            if ( events & GENERICAPP_SEND_MSG_EVT )
+   \                     ??SwqAPP_ProcessEvent_0:
+   \   000203   EE           MOV     A,R6
+   \   000204   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000206   4003         JC      $+5
+   \   000208   02....       LJMP    ??SwqAPP_ProcessEvent_15 & 0xFFFF
+    324            {
+    325              // Send "the" message
+    326              SwqAPP_SendTheMessage();
+   \   00020B   7409         MOV     A,#0x9
+   \   00020D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000210   AC82         MOV     R4,DPL
+   \   000212   AD83         MOV     R5,DPH
+   \   000214   7583..       MOV     DPH,#(`?<Constant "Hello World">` >> 8) & 0xff
+   \   000217   7582..       MOV     DPL,#`?<Constant "Hello World">` & 0xff
+   \   00021A   740C         MOV     A,#0xc
+   \   00021C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+   \   00021F                ; Setup parameters for call to function AF_DataRequest
+   \   00021F   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000222   78..         MOV     R0,#?V0 + 0
+   \   000224   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000227   75....       MOV     ?V0 + 0,#SwqAPP_TransID & 0xff
+   \   00022A   75....       MOV     ?V0 + 1,#(SwqAPP_TransID >> 8) & 0xff
+   \   00022D   78..         MOV     R0,#?V0 + 0
+   \   00022F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000232   740C         MOV     A,#0xc
+   \   000234   12....       LCALL   ?XSTACK_DISP0_8
+   \   000237   8582..       MOV     ?V0 + 0,DPL
+   \   00023A   8583..       MOV     ?V0 + 1,DPH
+   \   00023D   78..         MOV     R0,#?V0 + 0
+   \   00023F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000242                ; Setup parameters for call to function osal_strlen
+   \   000242   740E         MOV     A,#0xe
+   \   000244   12....       LCALL   ?XSTACK_DISP0_8
+   \   000247   AA82         MOV     R2,DPL
+   \   000249   AB83         MOV     R3,DPH
+   \   00024B   12....       LCALL   ??osal_strlen?relay
+   \   00024E   EA           MOV     A,R2
+   \   00024F   2401         ADD     A,#0x1
+   \   000251   F5..         MOV     ?V0 + 0,A
+   \   000253   E4           CLR     A
+   \   000254   3400         ADDC    A,#0x0
+   \   000256   F5..         MOV     ?V0 + 1,A
+   \   000258   78..         MOV     R0,#?V0 + 0
+   \   00025A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00025D   75..01       MOV     ?V0 + 0,#0x1
+   \   000260   75..00       MOV     ?V0 + 1,#0x0
+   \   000263   78..         MOV     R0,#?V0 + 0
+   \   000265   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000268   7920         MOV     R1,#0x20
+   \   00026A   7C..         MOV     R4,#SwqAPP_epDesc & 0xff
+   \   00026C   7D..         MOV     R5,#(SwqAPP_epDesc >> 8) & 0xff
+   \   00026E   7A..         MOV     R2,#SwqAPP_DstAddr & 0xff
+   \   000270   7B..         MOV     R3,#(SwqAPP_DstAddr >> 8) & 0xff
+   \   000272   12....       LCALL   ??AF_DataRequest?relay
+   \   000275   7409         MOV     A,#0x9
+   \   000277   12....       LCALL   ?DEALLOC_XSTACK8
+    327          
+    328              // Setup to send message again
+    329              osal_start_timerEx( SwqAPP_TaskID,
+    330                                  GENERICAPP_SEND_MSG_EVT,
+    331                                  GENERICAPP_SEND_MSG_TIMEOUT );
+   \   00027A                ; Setup parameters for call to function osal_start_timerEx
+   \   00027A   7C88         MOV     R4,#-0x78
+   \   00027C   7D13         MOV     R5,#0x13
+   \   00027E   7A01         MOV     R2,#0x1
+   \   000280   7B00         MOV     R3,#0x0
+   \   000282   90....       MOV     DPTR,#SwqAPP_TaskID
+   \   000285   E0           MOVX    A,@DPTR
+   \   000286   F9           MOV     R1,A
+   \   000287   12....       LCALL   ??osal_start_timerEx?relay
+    332          
+    333              // return unprocessed events
+    334              return (events ^ GENERICAPP_SEND_MSG_EVT);
+   \   00028A   EE           MOV     A,R6
+   \   00028B   6401         XRL     A,#0x1
+   \   00028D   FA           MOV     R2,A
+   \   00028E   EF           MOV     A,R7
+   \   00028F   02....       LJMP    ??SwqAPP_ProcessEvent_13 & 0xFFFF
+    335            }
+    336          
+    337            
+    338          #if defined( IAR_ARMCM3_LM )
+    339            // Receive a message from the RTOS queue
+    340            if ( events & GENERICAPP_RTOS_MSG_EVT )
+    341            {
+    342              // Process message from RTOS queue
+    343              SwqAPP_ProcessRtosMessage();
+    344          
+    345              // return unprocessed events
+    346              return (events ^ GENERICAPP_RTOS_MSG_EVT);
+    347            }
+    348          #endif
+    349          
+    350            // Discard unknown events
+    351            return 0;
+   \                     ??SwqAPP_ProcessEvent_15:
+   \   000292   7A00         MOV     R2,#0x0
+   \   000294   7B00         MOV     R3,#0x0
+   \                     ??SwqAPP_ProcessEvent_14:
+   \   000296   7415         MOV     A,#0x15
+   \   000298   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00029B   7F06         MOV     R7,#0x6
+   \   00029D   02....       LJMP    ?BANKED_LEAVE_XDATA
+    352          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SwqAPP_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SwqAPP_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SwqAPP_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SwqAPP_ProcessEvent
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "a">`:
+   \   000000   6100         DB "a"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Hello World">`:
+   \   000000   48656C6C     DB "Hello World"
+   \            6F20576F
+   \            726C6400
+    353          
+    354          /*********************************************************************
+    355           * Event Generation Functions
+    356           */
+    357          
+    358          /*********************************************************************
+    359           * @fn      SwqAPP_ProcessZDOMsgs()
+    360           *
+    361           * @brief   Process response messages
+    362           *
+    363           * @param   none
+    364           *
+    365           * @return  none
+    366           */
+    367          static void SwqAPP_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    368          {
+    369            switch ( inMsg->clusterID )
+    370            {
+    371              case End_Device_Bind_rsp:
+    372                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    373                {
+    374                  // Light LED
+    375                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    376                }
+    377          #if defined( BLINK_LEDS )
+    378                else
+    379                {
+    380                  // Flash LED to show failure
+    381                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+    382                }
+    383          #endif
+    384                break;
+    385          
+    386              case Match_Desc_rsp:
+    387                {
+    388                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+    389                  if ( pRsp )
+    390                  {
+    391                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+    392                    {
+    393                      SwqAPP_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    394                      SwqAPP_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+    395                      // Take the first endpoint, Can be changed to search through endpoints
+    396                      SwqAPP_DstAddr.endPoint = pRsp->epList[0];
+    397          
+    398                      // Light LED
+    399                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    400                    }
+    401                    osal_mem_free( pRsp );
+    402                  }
+    403                }
+    404                break;
+    405            }
+    406          }
+    407          
+    408          /*********************************************************************
+    409           * @fn      SwqAPP_HandleKeys
+    410           *
+    411           * @brief   Handles all key events for this device.
+    412           *
+    413           * @param   shift - true if in shift/alt.
+    414           * @param   keys - bit field for key events. Valid entries:
+    415           *                 HAL_KEY_SW_4
+    416           *                 HAL_KEY_SW_3
+    417           *                 HAL_KEY_SW_2
+    418           *                 HAL_KEY_SW_1
+    419           *
+    420           * @return  none
+    421           */
+    422          static void SwqAPP_HandleKeys( uint8 shift, uint8 keys )
+    423          {
+    424            zAddrType_t dstAddr;
+    425          
+    426            // Shift is used to make each button/switch dual purpose.
+    427            
+    428            if ( shift )
+    429            {
+    430              if ( keys & HAL_KEY_SW_1 )
+    431              {
+    432              }
+    433              if ( keys & HAL_KEY_SW_2 )
+    434              {
+    435              }
+    436              if ( keys & HAL_KEY_SW_3 )
+    437              {
+    438              }
+    439              if ( keys & HAL_KEY_SW_4 )
+    440              {
+    441              }
+    442            
+    443            }
+    444            else
+    445            {
+    446              if ( keys & HAL_KEY_SW_1 )
+    447              {
+    448                // Since SW1 isn't used for anything else in this application...
+    449          #if defined( SWITCH1_BIND )
+    450                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    451                keys |= HAL_KEY_SW_2;
+    452          #elif defined( SWITCH1_MATCH )
+    453                // or use SW1 to simulate SW4 for devices that only have one switch
+    454                keys |= HAL_KEY_SW_4;
+    455          #endif
+    456              }
+    457          
+    458              if ( keys & HAL_KEY_SW_2 )
+    459              {
+    460                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    461          
+    462                // Initiate an End Device Bind Request for the mandatory endpoint
+    463                dstAddr.addrMode = Addr16Bit;
+    464                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+    465                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    466                                      SwqAPP_epDesc.endPoint,
+    467                                      GENERICAPP_PROFID,
+    468                                      GENERICAPP_MAX_CLUSTERS, (cId_t *)SwqAPP_ClusterList,
+    469                                      GENERICAPP_MAX_CLUSTERS, (cId_t *)SwqAPP_ClusterList,
+    470                                      FALSE );
+    471              }
+    472          
+    473              if ( keys & HAL_KEY_SW_3 )
+    474              {
+    475              }
+    476             
+    477              if ( keys & HAL_KEY_SW_4 )
+    478              {
+    479                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    480                // Initiate a Match Description Request (Service Discovery)
+    481                dstAddr.addrMode = AddrBroadcast;
+    482                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+    483                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    484                                  GENERICAPP_PROFID,
+    485                                  GENERICAPP_MAX_CLUSTERS, (cId_t *)SwqAPP_ClusterList,
+    486                                  GENERICAPP_MAX_CLUSTERS, (cId_t *)SwqAPP_ClusterList,
+    487                                  FALSE );
+    488              }
+    489            }
+    490          }
+    491          
+    492          /*********************************************************************
+    493           * LOCAL FUNCTIONS
+    494           */
+    495          
+    496          /*********************************************************************
+    497           * @fn      SwqAPP_MessageMSGCB
+    498           *
+    499           * @brief   Data message processor callback.  This function processes
+    500           *          any incoming data - probably from other devices.  So, based
+    501           *          on cluster ID, perform the intended action.
+    502           *
+    503           * @param   none
+    504           *
+    505           * @return  none
+    506           */
+    507          static void SwqAPP_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    508          {
+    509            switch ( pkt->clusterId )
+    510            {
+    511              case GENERICAPP_CLUSTERID:
+    512                // "the" message
+    513          #if defined( LCD_SUPPORTED )
+    514                HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+    515          #elif defined( WIN32 )
+    516                WPRINTSTR( pkt->cmd.Data );
+    517          #endif
+    518                break;
+    519            }
+    520          }
+    521          
+    522          /*********************************************************************
+    523           * @fn      SwqAPP_SendTheMessage
+    524           *
+    525           * @brief   Send "the" message.
+    526           *
+    527           * @param   none
+    528           *
+    529           * @return  none
+    530           */
+    531          static void SwqAPP_SendTheMessage( void )
+    532          {
+    533            char theMessageData[] = "Hello World";
+    534          
+    535            if ( AF_DataRequest( &SwqAPP_DstAddr, &SwqAPP_epDesc,
+    536                                 GENERICAPP_CLUSTERID,
+    537                                 (byte)osal_strlen( theMessageData ) + 1,
+    538                                 (byte *)&theMessageData,
+    539                                 &SwqAPP_TransID,
+    540                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+    541            {
+    542              // Successfully requested to be sent.
+    543            }
+    544            else
+    545            {
+    546              // Error occurred in request to send.
+    547            }
+    548          }
+    549          
+    550          #if defined( IAR_ARMCM3_LM )
+    551          /*********************************************************************
+    552           * @fn      SwqAPP_ProcessRtosMessage
+    553           *
+    554           * @brief   Receive message from RTOS queue, send response back.
+    555           *
+    556           * @param   none
+    557           *
+    558           * @return  none
+    559           */
+    560          static void SwqAPP_ProcessRtosMessage( void )
+    561          {
+    562            osalQueue_t inMsg;
+    563          
+    564            if ( osal_queue_receive( OsalQueue, &inMsg, 0 ) == pdPASS )
+    565            {
+    566              uint8 cmndId = inMsg.cmnd;
+    567              uint32 counter = osal_build_uint32( inMsg.cbuf, 4 );
+    568          
+    569              switch ( cmndId )
+    570              {
+    571                case CMD_INCR:
+    572                  counter += 1;  /* Increment the incoming counter */
+    573                                 /* Intentionally fall through next case */
+    574          
+    575                case CMD_ECHO:
+    576                {
+    577                  userQueue_t outMsg;
+    578          
+    579                  outMsg.resp = RSP_CODE | cmndId;  /* Response ID */
+    580                  osal_buffer_uint32( outMsg.rbuf, counter );    /* Increment counter */
+    581                  osal_queue_send( UserQueue1, &outMsg, 0 );  /* Send back to UserTask */
+    582                  break;
+    583                }
+    584                
+    585                default:
+    586                  break;  /* Ignore unknown command */    
+    587              }
+    588            }
+    589          }
+    590          #endif
+    591          
+    592          /*********************************************************************
+    593           */
+
+   Maximum stack usage in bytes:
+
+     Function                   ISTACK PSTACK XSTACK
+     --------                   ------ ------ ------
+     SwqAPP_Init                    0      0      9
+       -> MT_UartInit               0      0     18
+       -> MT_UartRegisterTaskID     0      0     18
+       -> HalUARTWrite              0      0     18
+       -> afRegister                0      0     18
+       -> RegisterForKeys           0      0     18
+       -> ZDO_RegisterForZDOMsg     0      0     18
+       -> ZDO_RegisterForZDOMsg     0      0     18
+     SwqAPP_ProcessEvent            2      0     44
+       -> osal_msg_receive          0      0     70
+       -> osal_start_timerEx        0      0     70
+       -> osal_msg_deallocate       0      0     70
+       -> osal_msg_receive          0      0     70
+       -> ZDO_ParseEPListRsp        0      0     70
+       -> HalLedSet                 0      0     70
+       -> osal_mem_free             0      0     70
+       -> HalLedSet                 0      0     70
+       -> HalLedSet                 0      0     70
+       -> HalLedSet                 0      0     70
+       -> NLME_GetShortAddr         0      0     70
+       -> ZDP_EndDeviceBindReq      0      0     88
+       -> HalLedSet                 0      0     70
+       -> ZDP_MatchDescReq          0      0     86
+       -> osal_strlen               0      0     80
+       -> AF_DataRequest            0      0     88
+       -> osal_start_timerEx        0      0     70
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     SwqAPP_ClusterList             2
+     SwqAPP_SimpleDesc             12
+     SwqAPP_epDesc                  6
+     SwqAPP_TaskID                  1
+     SwqAPP_NwkState                1
+     SwqAPP_TransID                 1
+     SwqAPP_DstAddr                12
+     SwqAPP_Init                  125
+     SwqAPP_ProcessEvent          672
+     ??SwqAPP_Init?relay            6
+     ??SwqAPP_ProcessEvent?relay    6
+     ?<Constant "a">                2
+     ?<Constant "Hello World">     12
+
+ 
+ 797 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+  28 bytes in segment XDATA_ROM_C
+  21 bytes in segment XDATA_Z
+ 
+ 809 bytes of CODE  memory
+  28 bytes of CONST memory
+  21 bytes of XDATA memory
+
+Errors: none
+Warnings: none
